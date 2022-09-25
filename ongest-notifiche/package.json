@@ -18,6 +18,8 @@
   "homepage": "https://github.com/fucandreaci/ongest-notifiche#readme",
   "dependencies": {
     "api": "^4.5.2",
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1"
   }
 }

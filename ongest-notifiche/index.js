@@ -1,5 +1,4 @@
 const axios = require("axios");
-const sdk = require('api')('@onesignal/v9.0#1lcvpdql7habxe4');
 
 const getData = async () => {
     return await axios.get("https://ongest.it/API_/Endpoints/App.php?token=oYwTo1mO4kS8M96v&OG=all");
@@ -28,25 +27,14 @@ const sendUserNotification = async (msg, userData) => {
         contents: {
             en: msg
         },
+        headings: {
+            en: 'ON-GEST'
+        },
         subtitle: {
             en: userData.nome_associazione
         },
         include_external_user_ids: ['2']//[userData.id]
         //included_segments: ['All']
-    }, {
-        headers: {
-            Authorization: 'Basic ODZjZTgyZWEtYWY0Ni00NTUxLWFkY2QtODQ5OThlODcwNGJh',
-        }
-    })
-}
-
-const sendAllNotification = async (msg) => {
-    return await axios.post("https://onesignal.com/api/v1/notifications", {
-        app_id: '05c5afac-4696-4bc5-a9f6-2516e51c0a57',
-        contents: {
-            en: msg
-        },
-        included_segments: ['All']
     }, {
         headers: {
             Authorization: 'Basic ODZjZTgyZWEtYWY0Ni00NTUxLWFkY2QtODQ5OThlODcwNGJh',
