@@ -48,7 +48,9 @@ const sendAllNotification = async (msg, associazione) => {
         headings: {
             en: 'ON-GEST'
         },
-        included_segments: ['All']
+        filters: [
+            {"field": "tag", "key": "associazione", "relation": "=", "value": associazione.id}
+        ]
     }, {
         headers: {
             Authorization: 'Basic ODZjZTgyZWEtYWY0Ni00NTUxLWFkY2QtODQ5OThlODcwNGJh',
